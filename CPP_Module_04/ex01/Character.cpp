@@ -6,7 +6,7 @@
 /*   By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 16:52:32 by dmalori           #+#    #+#             */
-/*   Updated: 2021/04/29 18:57:38 by dmalori          ###   ########.fr       */
+/*   Updated: 2021/04/30 12:35:56 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ void Character::equip(AWeapon *w)
 
 void Character::attack(Enemy *e)
 {
-	std::cout << this->name << " attacks " << e->getType() << " with a " << this->weapon->getName() << std::endl;
+	if (this->weapon->getAPCost() <= this->ap)
+	{
+		this->ap -= this->weapon->getAPCost();
+		std::cout << this->name << " attacks " << e->getType() << " with a " << this->weapon->getName() << std::endl;
+		this->weapon->attack();
+	}
 }
 
 std::string const &Character::getName() const

@@ -6,7 +6,7 @@
 #    By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/23 11:15:19 by dmalori           #+#    #+#              #
-#    Updated: 2021/04/29 18:51:27 by dmalori          ###   ########.fr        #
+#    Updated: 2021/04/30 11:37:54 by dmalori          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ On_IPurple	=	'\033[0;105m'	# Purple
 On_ICyan	=	'\033[0;106m'	# Cyan
 On_IWhite	=	'\033[0;107m'	# White
 
-NAME		=	ex00
+NAME		=	ex01
 SRC			=	Character.cpp Enemy.cpp SuperMutant.cpp RadScorpion.cpp AWeapon.cpp PowerFist.cpp PlasmaRifle.cpp main.cpp
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic

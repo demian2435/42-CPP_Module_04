@@ -6,7 +6,7 @@
 /*   By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 16:52:22 by dmalori           #+#    #+#             */
-/*   Updated: 2021/04/29 18:58:16 by dmalori          ###   ########.fr       */
+/*   Updated: 2021/04/30 12:34:01 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ int main (void)
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
+    delete (b);
+    delete (pr);
+    delete (pf);
+    delete (me);
     return 0;
 }
