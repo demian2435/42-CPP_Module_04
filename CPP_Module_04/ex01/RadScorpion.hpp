@@ -15,9 +15,15 @@
 #include <iostream>
 #include "Enemy.hpp"
 
-class RadScorpion : public virtual Enemy
+class RadScorpion : public Enemy
 {
     public:
+        /* Default Constructor */
         RadScorpion(void);
-        ~RadScorpion(void);
+        /* Destructor */
+        virtual ~RadScorpion(void);
+        /* Copy constructor */
+        RadScorpion (RadScorpion const &other);
+        /* Operation overload = */
+	    RadScorpion &operator=(RadScorpion const &other);
 };

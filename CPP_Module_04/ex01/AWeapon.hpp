@@ -21,8 +21,17 @@ class AWeapon
         int apcost;
         int damage;
     public:
+        /* Default Constructor */
+        AWeapon() {}
+        /* Constructor  */
         AWeapon(std::string const & name, int apcost, int damage);
-        virtual ~AWeapon();
+        /* Destructor */
+        virtual ~AWeapon(void);
+        /* Copy constructor */
+        AWeapon (AWeapon const &other);
+        /* Operation overload = */
+	    AWeapon &operator=(AWeapon const &other);
+        /* Other */
         std::string const & getName() const;
         int getAPCost() const;
         int getDamage() const;

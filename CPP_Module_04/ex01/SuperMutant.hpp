@@ -15,10 +15,17 @@
 #include <iostream>
 #include "Enemy.hpp"
 
-class SuperMutant : public virtual Enemy
+class SuperMutant : public Enemy
 {
     public:
+        /* Default Constructor */
         SuperMutant(void);
-        ~SuperMutant(void);
+        /* Destructor */
+        virtual ~SuperMutant(void);
+        /* Copy constructor */
+        SuperMutant (SuperMutant const &other);
+        /* Operation overload = */
+	    SuperMutant &operator=(SuperMutant const &other);
+        /* Other */
         void takeDamage(int);
 };

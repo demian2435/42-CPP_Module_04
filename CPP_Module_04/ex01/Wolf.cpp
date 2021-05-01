@@ -21,3 +21,18 @@ Wolf::~Wolf(void)
 {
     std::cout << "* Wuu Wuuu Wuuuuu *" << std::endl;
 }
+
+Wolf::Wolf (Wolf const &other)
+{
+    *this = other;
+}
+
+Wolf &Wolf::operator=(Wolf const &other)
+{
+    if (this != &other)
+    {
+        this->hp = other.hp;
+        this->type = other.type;
+    }
+    return (*this);
+}

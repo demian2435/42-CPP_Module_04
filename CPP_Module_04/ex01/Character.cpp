@@ -12,7 +12,7 @@
 
 #include "Character.hpp"
 
-Character::Character(std::string const &name) : name(name), ap(40) , weapon(nullptr) {}
+Character::Character(std::string const &name) : name(name), ap(40) , weapon(0) {}
 
 Character::~Character() {}
 

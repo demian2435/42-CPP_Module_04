@@ -30,3 +30,18 @@ void SuperMutant::takeDamage(int damage)
             if (this->hp < 0)
                 this->hp = 0;
 }
+
+SuperMutant::SuperMutant (SuperMutant const &other)
+{
+    *this = other;
+}
+
+SuperMutant &SuperMutant::operator=(SuperMutant const &other)
+{
+    if (this != &other)
+    {
+        this->hp = other.hp;
+        this->type = other.type;
+    }
+    return (*this);
+}

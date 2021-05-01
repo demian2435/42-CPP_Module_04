@@ -47,7 +47,7 @@ int main (void)
     me->attack(b);
     me->attack(m);
     std::cout << *me;
-    me->equip(nullptr);
+    me->equip(0);
     std::cout << *me;
     delete (m);
     delete (b);

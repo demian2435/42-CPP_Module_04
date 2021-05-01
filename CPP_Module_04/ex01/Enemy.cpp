@@ -32,3 +32,18 @@ void Enemy::takeDamage(int damage)
     if (this->hp < 0)
         this->hp = 0;
 }
+
+Enemy::Enemy (Enemy const &other)
+{
+    *this = other;
+}
+
+Enemy &Enemy::operator=(Enemy const &other)
+{
+    if (this != &other)
+    {
+        this->hp = other.hp;
+        this->type = other.type;
+    }
+    return (*this);
+}

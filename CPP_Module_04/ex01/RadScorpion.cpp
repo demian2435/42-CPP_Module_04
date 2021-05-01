@@ -22,3 +22,17 @@ RadScorpion::~RadScorpion(void)
     std::cout << "* SPROTCH *" << std::endl;
 }
 
+RadScorpion::RadScorpion (RadScorpion const &other)
+{
+    *this = other;
+}
+
+RadScorpion &RadScorpion::operator=(RadScorpion const &other)
+{
+    if (this != &other)
+    {
+        this->hp = other.hp;
+        this->type = other.type;
+    }
+    return (*this);
+}

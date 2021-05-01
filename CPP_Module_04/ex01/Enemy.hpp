@@ -20,8 +20,17 @@ class Enemy
         int hp;
         std::string type;
     public:
+        /* Default Constructor */
+        Enemy() {}
+        /* Constructor */
         Enemy(int hp, std::string const & type);
+        /* Destructor */
         virtual ~Enemy();
+        /* Copy constructor */
+        Enemy (Enemy const &other);
+        /* Operation overload = */
+	    Enemy &operator=(Enemy const &other);
+        /* Other */
         std::string const &getType() const;
         int getHP() const;
         virtual void takeDamage(int);

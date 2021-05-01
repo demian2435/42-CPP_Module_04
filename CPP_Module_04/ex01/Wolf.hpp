@@ -15,9 +15,15 @@
 #include <iostream>
 #include "Enemy.hpp"
 
-class Wolf : public virtual Enemy
+class Wolf : public Enemy
 {
     public:
+        /* Default Constructor */
         Wolf(void);
-        ~Wolf(void);
+        /* Destructor */
+        virtual ~Wolf(void);
+        /* Copy constructor */
+        Wolf (Wolf const &other);
+        /* Operation overload = */
+	    Wolf &operator=(Wolf const &other);
 };

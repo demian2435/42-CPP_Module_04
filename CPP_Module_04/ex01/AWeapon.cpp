@@ -32,3 +32,21 @@ int AWeapon::getDamage(void) const
 }
 
 void AWeapon::attack(void) const {}
+
+
+AWeapon::AWeapon (AWeapon const &other)
+{
+    *this = other;
+}
+
+AWeapon &AWeapon::operator=(AWeapon const &other)
+{
+    if (this != &other)
+    {
+        this->name = other.name;
+        this->damage = other.damage;
+        this->apcost = other.apcost;
+    }
+    return (*this);
+}
+
