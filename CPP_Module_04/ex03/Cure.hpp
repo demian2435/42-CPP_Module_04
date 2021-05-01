@@ -23,4 +23,6 @@ class Cure : public virtual AMateria
         ~Cure(void);
         AMateria* clone() const;
         void use(ICharacter& target);
+        Cure(Cure const &other);
+	    Cure & operator=(Cure const &other);
 };

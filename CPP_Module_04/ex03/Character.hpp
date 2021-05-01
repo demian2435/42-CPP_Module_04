@@ -20,7 +20,6 @@ class Character : public virtual ICharacter
     private:
         std::string name;
         AMateria *list[4];
-        int index;
     public:
         Character(std::string name);
         Character(Character &other);

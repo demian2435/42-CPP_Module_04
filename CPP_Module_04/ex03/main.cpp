@@ -18,7 +18,7 @@
 #include "Cure.hpp"
 #include "Character.hpp"
 
-int main()
+int main(void)
 {
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());

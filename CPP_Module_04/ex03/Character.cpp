@@ -14,28 +14,33 @@
 
 Character::Character(std::string name)
 {
-	this->index = 0;
 	this->name = name;
+	for (int i = 0; i < 4; i++)
+		this->list[i] = 0;
 }
 
 Character::Character(Character &other)
 {
-	this->index = other.index;
-	this->name = other.name;
-	for (int i = 0; i < this->index; i++)
-		this->list[i] = other.list[i];
+	*this = other;
 }
 
 Character::~Character()
 {
-	for (int i = 0; i < this->index; i++)
-		delete (this->list[i]);
+	for (int i = 0; i < 4; i++)
+		if (this->list[i])
+			delete (this->list[i]);
 }
 
 
 Character &Character::operator = (Character &other)
 {
-	return *(new Character(other));
+	if (this != &other)
+	{
+		this->name = other.getName();
+		for (int i = 0; i < 4; i++)
+			this->list[i] = other.list[i];
+	}
+	return (*this);
 }
 
 std::string const & Character::getName() const
@@ -45,18 +50,24 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	if (this->index > 3)
-		return ;
-	this->list[this->index++] = m;
+	for (int i = 0; i < 4; i++)
+		if (!this->list[i])
+		{
+			this->list[i] = m;
+			return ;
+		}
 }
 void Character::unequip(int idx)
 {
-	if (this->index == 0)
+	if (idx < 0 || idx > 3)
 		return ;
-	this->list[this->index--] = nullptr;
+	if (this->list[idx])
+		this->list[idx] = 0;
 }
 void Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx < this->index)
+	if (idx < 0 || idx > 3)
+		return ;
+	if (this->list[idx])
 		this->list[idx]->use(target);
 }
