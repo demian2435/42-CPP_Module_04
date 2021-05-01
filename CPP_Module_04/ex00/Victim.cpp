@@ -22,6 +22,22 @@ Victim::~Victim(void)
     std::cout << "Victim " << this->name << " just died for no apparent reason!" << std::endl;
 }
 
+
+Victim::Victim (Victim const &other)
+{
+    *this = other;
+}
+
+
+Victim &Victim::operator=(Victim const &other)
+{
+    if (this != &other)
+    {
+        this->name = other.name;
+    }
+    return (*this);
+}
+
 std::string Victim::getName(void)
 {
     return this->name;

@@ -19,8 +19,17 @@ class Victim
     protected:
         std::string name;
     public:
+        /* Default Constructor */
+        Victim() {}
+        /* Constructor  */
         Victim(std::string name);
-        ~Victim(void);
+        /* Destructor */
+        virtual ~Victim(void);
+        /* Copy constructor */
+        Victim (Victim const &other);
+        /* Operation overload = */
+	    Victim &operator=(Victim const &other);
+        /* Other */
         std::string getName(void);
         virtual void getPolymorphed(void) const;
 };

@@ -32,7 +32,7 @@ std::string Sorcerer::getTitle(void)
 	return this->title;
 }
 
-void Sorcerer::polymorph(Victim const &v)
+void Sorcerer::polymorph(Victim const &v) const
 {
 	v.getPolymorphed();
 }
@@ -41,4 +41,19 @@ std::ostream& operator<<(std::ostream &output, Sorcerer &obj)
 {
 	output << "I am " << obj.getName() << ", " << obj.getTitle() << ", and I like ponies!" << std::endl;
 	return (output);
+}
+
+Sorcerer::Sorcerer (Sorcerer const &other)
+{
+    *this = other;
+}
+
+Sorcerer &Sorcerer::operator=(Sorcerer const &other)
+{
+    if (this != &other)
+    {
+        this->name = other.name;
+		this->title = other.title;
+    }
+    return (*this);
 }

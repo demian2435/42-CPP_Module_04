@@ -15,10 +15,19 @@
 #include <iostream>
 #include "Victim.hpp"
 
-class LittleGuy : public virtual Victim
+class LittleGuy : public Victim
 {
     public:
+        /* Default Constructor */
+        LittleGuy() {}
+        /* Constructor  */
         LittleGuy(std::string name);
-        ~LittleGuy(void);
+        /* Destructor */
+        virtual ~LittleGuy(void);
+        /* Copy constructor */
+        LittleGuy (LittleGuy const &other);
+        /* Operation overload = */
+	    LittleGuy &operator=(LittleGuy const &other);
+        /* Other */
         void getPolymorphed(void) const;
 };

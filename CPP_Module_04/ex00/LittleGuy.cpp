@@ -26,3 +26,17 @@ void LittleGuy::getPolymorphed(void) const
 {
     std::cout << this->name << " has been turned into a banana!" << std::endl;
 }
+
+LittleGuy::LittleGuy (LittleGuy const &other)
+{
+    *this = other;
+}
+
+LittleGuy &LittleGuy::operator=(LittleGuy const &other)
+{
+    if (this != &other)
+    {
+        this->name = other.name;
+    }
+    return (*this);
+}

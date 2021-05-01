@@ -15,10 +15,19 @@
 #include <iostream>
 #include "Victim.hpp"
 
-class Peon : public virtual Victim
+class Peon : public Victim
 {
     public:
+        /* Default Constructor */
+        Peon() {}
+        /* Constructor  */
         Peon(std::string name);
-        ~Peon(void);
+        /* Destructor */
+        virtual ~Peon(void);
+        /* Copy constructor */
+        Peon (Peon const &other);
+        /* Operation overload = */
+	    Peon &operator=(Peon const &other);
+        /* Other */
         void getPolymorphed(void) const;
 };

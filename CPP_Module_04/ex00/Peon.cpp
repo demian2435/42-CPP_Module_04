@@ -26,3 +26,17 @@ void Peon::getPolymorphed(void) const
 {
     std::cout << this->name << " has been turned into a pink pony!" << std::endl;
 }
+
+Peon::Peon (Peon const &other)
+{
+    *this = other;
+}
+
+Peon &Peon::operator=(Peon const &other)
+{
+    if (this != &other)
+    {
+        this->name = other.name;
+    }
+    return (*this);
+}
