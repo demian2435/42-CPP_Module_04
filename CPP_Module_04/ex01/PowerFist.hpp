@@ -13,10 +13,17 @@
 #pragma once
 #include "AWeapon.hpp"
 
-class PowerFist : public virtual AWeapon
+class PowerFist : public AWeapon
 {
     public:
+        /* Default Constructor */
         PowerFist(void);
-        ~PowerFist();
+        /* Destructor */
+        virtual ~PowerFist(void);
+        /* Copy constructor */
+        PowerFist (PowerFist const &other);
+        /* Operation overload = */
+        PowerFist &operator=(PowerFist const &other);
+        /* Other */
         void attack(void) const;
 };

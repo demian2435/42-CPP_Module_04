@@ -21,3 +21,19 @@ void Granade::attack() const
 {
     std::cout << "* BOOOOOOOMMMMMMM *" << std::endl;
 }
+
+Granade::Granade (Granade const &other)
+{
+    *this = other;
+}
+
+Granade &Granade::operator=(Granade const &other)
+{
+    if (this != &other)
+    {
+        this->apcost = other.apcost;
+        this->damage = other.damage;
+        this->name = other.name;
+    }
+    return (*this);
+}

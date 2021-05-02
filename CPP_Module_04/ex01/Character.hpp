@@ -23,8 +23,17 @@ class Character
         int ap;
         AWeapon *weapon;
     public:
+        /* Default Constructor */
+        Character() {}
+        /* Constructor  */
         Character(std::string const &name);
-        ~Character(void);
+        /* Destructor */
+        virtual ~Character(void);
+        /* Copy constructor */
+        Character (Character const &other);
+        /* Operation overload = */
+	    Character &operator=(Character const &other);
+        /* Other */
         void recoverAP(void);
         void equip(AWeapon*);
         void attack(Enemy*);

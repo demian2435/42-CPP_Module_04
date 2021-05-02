@@ -21,3 +21,19 @@ void PowerFist::attack() const
 {
     std::cout << "* pschhh... SBAM! *" << std::endl;
 }
+
+PowerFist::PowerFist (PowerFist const &other)
+{
+    *this = other;
+}
+
+PowerFist &PowerFist::operator=(PowerFist const &other)
+{
+    if (this != &other)
+    {
+        this->apcost = other.apcost;
+        this->damage = other.damage;
+        this->name = other.name;
+    }
+    return (*this);
+}

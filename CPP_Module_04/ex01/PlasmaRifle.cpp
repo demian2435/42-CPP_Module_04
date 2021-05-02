@@ -21,3 +21,19 @@ void PlasmaRifle::attack() const
 {
     std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }
+
+PlasmaRifle::PlasmaRifle (PlasmaRifle const &other)
+{
+    *this = other;
+}
+
+PlasmaRifle &PlasmaRifle::operator=(PlasmaRifle const &other)
+{
+    if (this != &other)
+    {
+        this->apcost = other.apcost;
+        this->damage = other.damage;
+        this->name = other.name;
+    }
+    return (*this);
+}

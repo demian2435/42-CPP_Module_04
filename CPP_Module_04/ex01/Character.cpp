@@ -61,3 +61,19 @@ std::ostream& operator<<(std::ostream &output, Character &obj)
 		output << obj.getName() << " has " << obj.getAp() << " AP and is unarmed" << std::endl;
 	return (output);
 }
+
+Character::Character (Character const &other)
+{
+    *this = other;
+}
+
+Character &Character::operator=(Character const &other)
+{
+    if (this != &other)
+    {
+        this->ap = other.ap;
+        this->name = other.name;
+        this->weapon = other.weapon;
+    }
+    return (*this);
+}

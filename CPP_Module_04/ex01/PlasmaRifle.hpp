@@ -13,10 +13,17 @@
 #pragma once
 #include "AWeapon.hpp"
 
-class PlasmaRifle : public virtual AWeapon
+class PlasmaRifle : public AWeapon
 {
     public:
+        /* Default Constructor */
         PlasmaRifle(void);
-        ~PlasmaRifle();
+        /* Destructor */
+        virtual ~PlasmaRifle(void);
+        /* Copy constructor */
+        PlasmaRifle (PlasmaRifle const &other);
+        /* Operation overload = */
+        PlasmaRifle &operator=(PlasmaRifle const &other);
+        /* Other */
         void attack(void) const;
 };
