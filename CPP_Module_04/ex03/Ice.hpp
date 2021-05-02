@@ -16,13 +16,18 @@
 #include <iostream>
 #include <string>
 
-class Ice : public virtual AMateria
+class Ice : public AMateria
 {
     public:
+        /* Default Constructor */
         Ice(void);
+        /* Destructor */
         ~Ice();
-        Ice(Ice const &toCopy);
-	    Ice & operator=(Ice const &toCopy);
+        /* Copy constructor */
+        Ice(Ice const &other);
+        /* Operation overload = */
+	    Ice & operator=(Ice const &other);
+        /* Other */
         AMateria* clone() const;
         void use(ICharacter& target);
 };

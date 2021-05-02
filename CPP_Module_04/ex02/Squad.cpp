@@ -65,7 +65,7 @@ Squad &Squad::operator=(Squad const &other)
         this->i = 0;
         for (int i = 0; i < 100; i++)
             if (other.array[i])
-                this->push(other.getUnit(i));
+                this->push(other.getUnit(i)->clone());
     }
     return (*this);
 }

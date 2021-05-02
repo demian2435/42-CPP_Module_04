@@ -21,10 +21,17 @@ class Character : public virtual ICharacter
         std::string name;
         AMateria *list[4];
     public:
+        /* Default Constructor */
+        Character() {}
+        /* Constructor  */
         Character(std::string name);
-        Character(Character &other);
+        /* Destructor */
         ~Character();
+        /* Copy constructor */
+        Character(Character &other);
+        /* Operation overload = */
         Character &operator = (Character &other);
+        /* Other */
         std::string const & getName() const;
         void equip(AMateria* m);
         void unequip(int idx);

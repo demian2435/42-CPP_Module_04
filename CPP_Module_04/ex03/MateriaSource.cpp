@@ -48,7 +48,7 @@ MateriaSource & MateriaSource::operator=(MateriaSource const & other)
 void MateriaSource::learnMateria(AMateria *m)
 {
 	if (this->index > 3)
-		return;
+		return ;
 	this->list[this->index++] = m;
 }
 

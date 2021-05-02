@@ -23,12 +23,19 @@ class AMateria
         std::string _type;
         unsigned int _xp;
     public:
+        /* Default Constructor */
+        AMateria() {}
+        /* Constructor  */
         AMateria(std::string const & type);
+        /* Destructor */
         virtual ~AMateria();
+        /* Copy constructor */
+        AMateria (AMateria const &other);
+        /* Operation overload = */
+	    AMateria &operator=(AMateria const &other);
+        /* Other */
         std::string const & getType() const; //Returns the materia type
         unsigned int getXP() const; //Returns the Materia's XP
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
-        AMateria (AMateria const &other);
-	    AMateria &operator=(AMateria const &other);
 };

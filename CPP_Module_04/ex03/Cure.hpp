@@ -16,13 +16,18 @@
 #include <iostream>
 #include <string>
 
-class Cure : public virtual AMateria
+class Cure : public AMateria
 {
     public:
+        /* Default Constructor */
         Cure(void);
+        /* Destructor */
         ~Cure(void);
+        /* Copy constructor */
+        Cure(Cure const &other);
+        /* Operation overload = */
+	    Cure & operator=(Cure const &other);
+        /* Other */
         AMateria* clone() const;
         void use(ICharacter& target);
-        Cure(Cure const &other);
-	    Cure & operator=(Cure const &other);
 };

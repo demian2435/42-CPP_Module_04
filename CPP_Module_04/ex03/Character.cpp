@@ -21,7 +21,7 @@ Character::Character(std::string name)
 
 Character::Character(Character &other)
 {
-	*this = other;
+	Character::operator=(other);
 }
 
 Character::~Character()

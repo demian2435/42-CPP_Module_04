@@ -14,16 +14,21 @@
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
-class MateriaSource : public virtual IMateriaSource
+class MateriaSource : public IMateriaSource
 {
     private:
         AMateria *list[4];
         int index;
     public:
+        /* Default Constructor */
         MateriaSource ();
+        /* Destructor */
         ~MateriaSource();
+        /* Copy constructor */
         MateriaSource(MateriaSource const & other);
+        /* Operation overload = */
 	    MateriaSource & operator=(MateriaSource const & other);
+        /* Other */
         void learnMateria(AMateria*);
         AMateria* createMateria(std::string const & type);
 };
