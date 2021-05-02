@@ -42,3 +42,14 @@ void AssaultTerminator::meleeAttack() const
 {
     std::cout << "* attacks with chainfists *" << std::endl;
 }
+
+AssaultTerminator::AssaultTerminator (AssaultTerminator const &other)
+{
+    *this = other;
+}
+
+AssaultTerminator &AssaultTerminator::operator=(AssaultTerminator const &other)
+{
+    (void) other;
+    return (*this);
+}

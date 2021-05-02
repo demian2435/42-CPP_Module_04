@@ -13,11 +13,18 @@
 #pragma once
 #include "ISpaceMarine.hpp"
 
-class TacticalMarine : public virtual ISpaceMarine
+class TacticalMarine : public ISpaceMarine
 {
     public :
+        /* Default Constructor */
         TacticalMarine();
+        /* Destructor */
         ~TacticalMarine();
+        /* Copy constructor */
+        TacticalMarine (TacticalMarine const &other);
+        /* Operation overload = */
+	    TacticalMarine &operator=(TacticalMarine const &other);
+        /* Other */
         ISpaceMarine* clone() const;
         void battleCry() const;
         void rangedAttack() const;

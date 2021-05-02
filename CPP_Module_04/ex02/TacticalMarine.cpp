@@ -42,3 +42,14 @@ void TacticalMarine::meleeAttack() const
 {
     std::cout << "* attacks with a chainsword *" << std::endl;
 }
+
+TacticalMarine::TacticalMarine (TacticalMarine const &other)
+{
+    *this = other;
+}
+
+TacticalMarine &TacticalMarine::operator=(TacticalMarine const &other)
+{
+    (void) other;
+    return (*this);
+}

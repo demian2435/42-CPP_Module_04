@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "ISpaceMarine.hpp"
 #include "ISquad.hpp"
 #include "TacticalMarine.hpp"
@@ -30,6 +31,12 @@ int main(void)
         cur->rangedAttack();
         cur->meleeAttack();
     }
+    ISpaceMarine* pippo = new TacticalMarine;
+    ISquad *s2 = new Squad;
+    s2->push(pippo);
+    s2->push(pippo);
+    std::cout << s2->getCount() << std::endl;
+    delete s2;
     delete vlc;
     return 0;
 }
