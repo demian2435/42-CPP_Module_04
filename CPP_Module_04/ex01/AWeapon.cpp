@@ -31,9 +31,6 @@ int AWeapon::getDamage(void) const
     return this->damage;
 }
 
-void AWeapon::attack(void) const {}
-
-
 AWeapon::AWeapon (AWeapon const &other)
 {
     *this = other;
