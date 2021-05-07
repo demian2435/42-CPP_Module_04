@@ -27,8 +27,11 @@ Character::Character(Character &other)
 Character::~Character()
 {
 	for (int i = 0; i < 4; i++)
+	{
 		if (this->list[i])
 			delete (this->list[i]);
+		this->list[i] = 0;
+	}
 }
 
 
@@ -38,7 +41,11 @@ Character &Character::operator = (Character &other)
 	{
 		this->name = other.getName();
 		for (int i = 0; i < 4; i++)
-			this->list[i] = other.list[i];
+		{
+			if (this->list[i])
+				delete (this->list[i]);
+			this->list[i] = other.list[i]->clone();
+		}
 	}
 	return (*this);
 }
