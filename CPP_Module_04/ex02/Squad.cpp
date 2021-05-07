@@ -22,8 +22,11 @@ Squad::Squad()
 Squad::~Squad()
 {
     for (int i = 0; i < 100; i++)
+    {
         if (this->array[i])
             delete (this->array[i]);
+        this->array[i] = 0;
+    }
 }
 
 int Squad::getCount(void) const
@@ -42,12 +45,12 @@ ISpaceMarine* Squad::getUnit(int index) const
 int Squad::push(ISpaceMarine *new_sm)
 {
     if (this->i == 100)
-        return i;
-    for (int i = 0; i < this->i; i++)
-        if (this->array[i] == new_sm)
+        return this->i;
+    for (int j = 0; j < this->i; j++)
+        if (this->array[j] == new_sm)
             return this->i;
-    this->array[i++] = new_sm;
-    return i;
+    this->array[this->i++] = new_sm;
+    return this->i;
 }
 
 Squad::Squad (Squad const &other)
@@ -59,13 +62,16 @@ Squad &Squad::operator=(Squad const &other)
 {
     if (this != &other)
     {
-        for (int i = 0; i < 100; i++)
-            if (this->array[i])
-                delete (this->array[i]);
+        for (int j = 0; j < 100; j++)
+        {
+            if (this->array[j])
+                delete (this->array[j]);
+            this->array[j] = 0;
+        }
         this->i = 0;
-        for (int i = 0; i < 100; i++)
-            if (other.array[i])
-                this->push(other.getUnit(i)->clone());
+        for (int j = 0; j < 100; j++)
+            if (other.array[j])
+                this->push(other.getUnit(j)->clone());
     }
     return (*this);
 }
