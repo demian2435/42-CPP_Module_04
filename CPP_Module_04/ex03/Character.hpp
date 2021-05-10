@@ -6,7 +6,7 @@
 /*   By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 16:50:49 by dmalori           #+#    #+#             */
-/*   Updated: 2021/04/30 18:26:01 by dmalori          ###   ########.fr       */
+/*   Updated: 2021/05/10 11:55:45 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Character : public virtual ICharacter
     private:
         std::string name;
         AMateria *list[4];
-    public:
         /* Default Constructor */
         Character() {}
+    public:
         /* Constructor  */
         Character(std::string name);
         /* Destructor */

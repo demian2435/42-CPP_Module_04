@@ -6,7 +6,7 @@
 /*   By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 15:19:03 by dmalori           #+#    #+#             */
-/*   Updated: 2021/04/30 18:48:02 by dmalori          ###   ########.fr       */
+/*   Updated: 2021/05/10 11:56:01 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class AMateria
     protected:
         std::string _type;
         unsigned int _xp;
-    public:
         /* Default Constructor */
         AMateria() {}
+    public:
         /* Constructor  */
         AMateria(std::string const & type);
         /* Destructor */

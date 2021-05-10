@@ -6,7 +6,7 @@
 /*   By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 17:42:54 by dmalori           #+#    #+#             */
-/*   Updated: 2021/04/30 18:29:43 by dmalori          ###   ########.fr       */
+/*   Updated: 2021/05/10 11:59:37 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ Character &Character::operator = (Character &other)
 		{
 			if (this->list[i])
 				delete (this->list[i]);
-			this->list[i] = other.list[i]->clone();
+			this->list[i] = 0;
 		}
+		for (int i = 0; i < 4; i++)
+			this->list[i] = other.list[i]->clone();
 	}
 	return (*this);
 }
