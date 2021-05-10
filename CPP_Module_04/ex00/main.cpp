@@ -6,7 +6,7 @@
 /*   By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 12:04:06 by dmalori           #+#    #+#             */
-/*   Updated: 2021/04/29 16:47:10 by dmalori          ###   ########.fr       */
+/*   Updated: 2021/05/10 11:38:20 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main (void)
 	std::cout << robert << jim << joe << gino;
 	robert.polymorph(jim);
 	robert.polymorph(joe);
-	robert.polymorph(gino);
+	gino.getPolymorphed();
 	return 0;
 }

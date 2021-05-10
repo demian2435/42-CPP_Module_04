@@ -6,7 +6,7 @@
 /*   By: dmalori <dmalori@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 12:04:13 by dmalori           #+#    #+#             */
-/*   Updated: 2021/04/29 16:43:10 by dmalori          ###   ########.fr       */
+/*   Updated: 2021/05/10 11:40:09 by dmalori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 
 class Peon : public Victim
 {
-    public:
+    private:
         /* Default Constructor */
         Peon() {}
+    public:
         /* Constructor  */
         Peon(std::string name);
         /* Destructor */
